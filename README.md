@@ -48,3 +48,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 title, description, type of task (bug, task, story)
 
 json-server data/db.json -m ./node_modules/json-server-auth -r data/routes.json --port 8080
+
+dropdown, register, home, allroutes (opacity make 80), Login(handle guest), translation files

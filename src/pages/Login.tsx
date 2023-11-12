@@ -40,11 +40,19 @@ const Login = () => {
     setLoginForm({ ...loginForm, [fieldName]: value });
   };
 
-  const handleGuestUser = () => {
-    setLoginForm({
-      email: t('defaultUserLabel'),
-      password: t('defaultPassLabel'),
-    });
+  const handleGuestUser = async () => {
+    try {
+      const autDetails = {
+        email: process.env.REACT_APP_GUEST_LOGIN,
+        password: process.env.REACT_APP_GUEST_PASSWORD,
+      };
+      const response = await login(autDetails);
+      if (response.email) {
+        navigate('/dashboard');
+      }
+    } catch (error) {
+      ErrorHandler(error);
+    }
   };
 
   return (

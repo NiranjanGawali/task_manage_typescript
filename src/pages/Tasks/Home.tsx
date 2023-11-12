@@ -24,7 +24,7 @@ const Home = () => {
   }, []); // eslint-disable-line
 
   return (
-    <main className='dark:bg-black'>
+    <main>
       <div className='flex flex-wrap mx-4 justify-center'>
         {taskList.length === 0 && (
           <div className='mt-20'>

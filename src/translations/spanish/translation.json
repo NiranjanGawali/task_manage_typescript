@@ -38,7 +38,5 @@
   "pageNotFoundStatusCodeLabel": "404",
   "changeLanguageLabel": "Cambiar Idioma",
   "languageEnglishLabel": "Inglés",
-  "languageSpanishLabel": "Español",
-  "defaultUserLabel": "johndoe@gmail.com",
-  "defaultPassLabel": "winter"
+  "languageSpanishLabel": "Español"
 }

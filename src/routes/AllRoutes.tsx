@@ -18,7 +18,7 @@ const AllRoutes = () => {
   );
 
   return (
-    <div className='dark:bg-black dark:opacity-90'>
+    <div className='dark:bg-black dark:bg-opacity-80'>
       <Routes>
         <Route
           path='/dashboard'

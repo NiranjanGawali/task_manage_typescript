@@ -86,7 +86,7 @@ const Dropdown = () => {
       <div
         className={`${
           !isUserDropDownOpen ? 'hidden' : ''
-        } absolute z-100 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 right-2 lg:right-10 top-12 mt-10 md:mt-0 lg:mt-0`}
+        } absolute z-100 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 right-2 2xl:right-40 top-12 mt-10 md:mt-0 lg:mt-0`}
         id='user-dropdown'
       >
         <div className='px-4 py-3'>

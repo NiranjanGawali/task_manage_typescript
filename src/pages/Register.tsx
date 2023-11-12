@@ -49,7 +49,7 @@ const Register = () => {
 
   return (
     <main className='h-screen flex justify-center items-center'>
-      <div className='m-auto mt-10 w-full border p-5 rounded-lg shadow-lg sm:w-2/6 bg-slate-50 dark:bg-black'>
+      <div className='m-auto w-full border p-5 rounded-lg shadow-lg sm:w-2/6 bg-slate-50 dark:bg-black'>
         <div className='flex justify-end'>
           <MemorizedDarkMode />
         </div>
