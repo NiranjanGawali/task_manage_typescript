@@ -1,0 +1,165 @@
+{
+  "users": [
+    {
+      "password": "$2a$10$O90Rw0cFBTsNfJrhk58lge6DmJsjaCFPb.ln9T9hWHWX5a2Hoacei",
+      "email": "johndoe@gmail.com",
+      "name": "John Doe",
+      "id": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "email": "nir@gmail.com",
+      "password": "$2a$10$AN.9dSuhta9GXZT3fDwKfOaeADS8GKf8C4r0DU4GEpsZzLLt77EM6",
+      "id": "954c1e24-2ac6-4488-bf6c-bce772f09efc",
+      "name": "Niranjan"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "0663d3ab-9ef8-4fbc-9d0d-462122f6c512",
+      "title": "Complete the study",
+      "description": "Read the assigned study material and take notes on key points. Analyze and interpret the data collected during the study to draw meaningful conclusions.",
+      "createdAt": "2022-12-01T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "943f581f-bd15-4329-a9d8-093e8741c4aa",
+      "title": "Prepare presentation slides",
+      "description": "Create a visually appealing presentation summarizing the study findings. Include relevant charts, graphs, and visuals to support the key points of the study.",
+      "createdAt": "2022-11-30T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "f77e7f0a-d006-4cc0-9822-0c62a3a7b5f5",
+      "title": "Conduct research analysis",
+      "description": "Perform an in-depth analysis of the collected data using statistical techniques and tools. Identify patterns, trends, and correlations to derive insights from the study.",
+      "createdAt": "2022-11-29T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "e285cc8c-a82e-4d18-95c1-2c8c5364a7d8",
+      "title": "Review the literature",
+      "description": "Conduct an extensive literature review to explore existing research related to the study topic. Analyze and synthesize relevant studies, articles, and scholarly papers.",
+      "createdAt": "2022-11-26T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "09320020-2dd6-4b2d-8efc-3fadef6f55f4",
+      "title": "Design the experiment",
+      "description": "Plan and design a well-structured experiment considering the study objectives. Clearly define the variables, control groups, and procedures to ensure reliable and valid results.",
+      "createdAt": "2022-11-25T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "88e019b4-195a-497f-98dd-12cfb16675f2",
+      "title": "Gather participant feedback",
+      "description": "Implement data collection methods like surveys or interviews to gather feedback from study participants. Design the questionnaire or interview guide, conduct the sessions, and record the responses.k",
+      "createdAt": "2022-11-24T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "2046e768-bb64-482c-bd93-964b951e0fb4",
+      "title": "Analyze survey responses",
+      "description": "Thoroughly analyze the responses obtained from surveys conducted as part of the study. Use statistical analysis techniques to interpret the data and present insights in a meaningful way.",
+      "createdAt": "2022-11-23T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "cdc1224e-6f99-441e-a838-6a32646b24a4",
+      "title": "Prepare a questionnaire",
+      "description": "Develop a comprehensive questionnaire to collect data from study participants. Ensure the questions are clear, unbiased, and aligned with the study objectives.",
+      "createdAt": "2022-11-22T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "a158f0b7-243d-442b-9775-148b1ac1f68b",
+      "title": "Create a study timeline",
+      "description": "Establish a detailed timeline with deadlines for each stage of the study. Break down the tasks, set milestones, and monitor progress to stay on track and meet project timelines.",
+      "createdAt": "2022-11-21T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "e85741f4-7ce2-4f20-9b81-52108baa676b",
+      "title": "Validate research findings",
+      "description": "Validate the accuracy and reliability of research findings using various methods such as peer review, cross-referencing data, or replicating the study. Ensure the results are credible and trustworthy.",
+      "createdAt": "2022-11-20T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "27b30143-841d-46a6-b3c8-10e1f3de3f80",
+      "title": "Collaborate with peers",
+      "description": "Engage in collaborative discussions with colleagues or peers working on similar research topics. Share ideas, exchange feedback, and stay updated with the latest advancements in the field.",
+      "createdAt": "2022-11-19T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "7843cca6-1d3a-4189-883e-b3a75f0108a9",
+      "title": "Present study findings",
+      "description": "Deliver a compelling presentation or write a report to communicate the study findings effectively. Structure the presentation/report logically and highlight the key findings, methodology, and implications.",
+      "createdAt": "2022-11-18T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "46e91329-19eb-40bc-b9fd-7545bc0f44b2",
+      "title": "Apply for research grants",
+      "description": "Explore available research grants or funding opportunities to support the study. Prepare the grant proposals, outlining the study's significance, objectives, methodology, and expected outcomes.",
+      "createdAt": "2022-11-17T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "3fc08324-7d05-4049-9b6b-f1ebab3e578c",
+      "title": "Revise the study methodology",
+      "description": "Review and modify the study methodology based on initial results or feedback. Adapt the study design to address any limitations or improve the reliability of the research.",
+      "createdAt": "2022-11-16T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "e4259924-6f9c-489a-acf7-604d8dbd3155",
+      "title": "Conduct data cleaning",
+      "description": "Clean and preprocess the collected data to ensure its quality and readiness for analysis. Handle missing values, remove outliers, and standardize the data to facilitate further analysis.",
+      "createdAt": "2022-11-15T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "dbf1db4e-3a7d-49b4-a5ac-30eaea4daf8c",
+      "title": "Organize research materials",
+      "description": "Organize and categorize research materials such as articles, books, and papers. Create a well-structured repository or database for easy access and reference during the study.",
+      "createdAt": "2022-11-14T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "fdebf3b3-707c-44f2-8ad9-7909f8e422a4",
+      "title": "Conduct statistical analysis",
+      "description": "Apply appropriate statistical tests and methods to analyze the data collected during the study. Use statistical software or programming languages to perform the analysis accurately.",
+      "createdAt": "2022-11-13T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "id": "a1ce22f6-3754-4ce9-ba54-40ab0a353146",
+      "title": "Seek ethical approval",
+      "description": "Obtain ethical approval from relevant authorities or institutional review boards for the study. Ensure that the study follows ethical guidelines and safeguards the rights and welfare of participants.",
+      "createdAt": "2023-11-01T10:00:00Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "title": "Game of thrones: Story",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n",
+      "id": "352c1fd8-5379-44a5-8d48-b5a93aefd004",
+      "createdAt": "2023-11-07T12:42:15.561Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "title": "Long text trialn",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n",
+      "id": "8e239cf0-2497-49c3-8c1a-a1857cadbd29",
+      "createdAt": "2023-11-08T06:28:40.548Z",
+      "userId": "03bcc3d1-bcad-45ad-b1bb-2dfc9ce41538"
+    },
+    {
+      "title": "Demo Task Title",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "id": "5a333c45-b4ba-4ba7-88f0-87e6bb607f8c",
+      "createdAt": "2023-11-12T02:50:30.677Z",
+      "userId": "954c1e24-2ac6-4488-bf6c-bce772f09efc"
+    }
+  ]
+}
