@@ -51,9 +51,10 @@ const TaskContextProvider = ({ children }: { children: ReactNode }) => {
     try {
       const deleteResponse = await taskService.deleteTask(id);
       if (deleteResponse.statusText === 'OK') {
-        setTaskList((prevTaskList) =>
-          prevTaskList.filter((task) => task.id !== id)
-        );
+        // setTaskList((prevTaskList) =>
+        //   prevTaskList.filter((task) => task.id !== id)
+        // );
+        getTasks();
       }
     } catch (error) {
       throw error;
