@@ -25,6 +25,7 @@ const Task = ({ task }: TaskProps) => {
     try {
       setShowSpinner(true);
       deleteTask(id);
+      showDeleteConfirmPopup(false);
       setTimeout(() => {
         setShowSpinner(false);
       }, 1000);

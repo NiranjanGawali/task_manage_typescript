@@ -4,7 +4,7 @@ import { Throttling } from '../components';
 // import PageNotFound from '../pages';
 import ProtectedRoutes from './ProtectedRoutes';
 import LoginProtectedRoute from './LoginProtectedRoute';
-import { Home } from '../pages';
+import { Tasks } from '../pages';
 
 const TaskDetails = lazy(() => import('../pages/Tasks/TaskDetails'));
 const UserDetails = lazy(() => import('../pages/UserDetails'));
@@ -28,7 +28,7 @@ const AllRoutes = () => {
             </ProtectedRoutes>
           }
         >
-          <Route path='' element={<Home />} />
+          <Route path='' element={<Tasks />} />
           <Route path='task/:id' element={<TaskDetails />} />
           <Route path='demo' element={<Throttling />} />{' '}
           {/* Added for testing purpose, not related the current application */}

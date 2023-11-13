@@ -86,7 +86,9 @@ const AddTask = ({ isOpen, closeModal }: AddTaskProps) => {
       }
       closeModal();
       setTaskForm(initialObject);
-      setShowSpinner(false);
+      setTimeout(() => {
+        setShowSpinner(false);
+      }, 1000);
     } catch (error: any) {
       ErrorHandler(error);
       setShowSpinner(false);

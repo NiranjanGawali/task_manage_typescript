@@ -4,7 +4,7 @@ import { useCommonContext, useTaskContext, useTitle } from '../../hooks';
 import { ErrorHandler } from '../../utility';
 import { useTranslation } from 'react-i18next';
 
-const Home = () => {
+const Tasks = () => {
   // i18n translation
   const { t } = useTranslation();
 
@@ -58,4 +58,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Tasks;
