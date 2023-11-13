@@ -1,10 +1,9 @@
-import React, { memo, useEffect, useState } from 'react';
+import { memo, useEffect } from 'react';
+import { useCommonContext } from '../../hooks';
 
 const DarkMode = () => {
-  const darkModeLocalStorageValue = sessionStorage.getItem('theme');
-  const [darkMode, setDarkMode] = useState<boolean>(
-    darkModeLocalStorageValue ? JSON.parse(darkModeLocalStorageValue) : false
-  );
+  // Contexts
+  const { darkMode, setDarkMode } = useCommonContext();
 
   useEffect(() => {
     const root = window.document.documentElement;

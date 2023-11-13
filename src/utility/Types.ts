@@ -55,6 +55,8 @@ type CommonContextValues = {
   setEditableTask: (task: TaskType | null) => void;
   popupStatus: boolean;
   updatePopupStatus: (popupStatus: boolean) => void;
+  darkMode: boolean;
+  setDarkMode: (darkModeValue: boolean) => void;
 };
 
 // ConfirmPopup type

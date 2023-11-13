@@ -4,7 +4,7 @@ import { MemorizedConfirmPopup } from '../Modals/ConfirmPopup';
 import { TaskProps, ErrorHandler } from '../../utility';
 import { useCommonContext, useTaskContext } from '../../hooks';
 import { useTranslation } from 'react-i18next';
-import LoadingSkeleton from 'react-loading-skeleton';
+import LoadingSkeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const Task = ({ task }: TaskProps) => {
   // i18n translation
@@ -12,7 +12,7 @@ const Task = ({ task }: TaskProps) => {
 
   // contexts
   const { deleteTask } = useTaskContext();
-  const { updatePopupStatus, setEditableTask } = useCommonContext();
+  const { updatePopupStatus, setEditableTask, darkMode } = useCommonContext();
 
   // states
   const { title, description, id, createdAt } = task;
@@ -43,11 +43,23 @@ const Task = ({ task }: TaskProps) => {
     <div className='bg-white border border-gray-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700 h-70 overflow-auto'>
       {loading || !task ? (
         <>
-          {/* <SkeletonTheme baseColor='#202020' highlightColor='#444'> */}
-          <LoadingSkeleton height={40} className='m-2 p-2 dark:bg-gray-800' />
-          <LoadingSkeleton height={220} className='m-2 p-2 dark:bg-gray-800' />
-          <LoadingSkeleton height={60} className='m-2 p-2 dark:bg-gray-800' />
-          {/* </SkeletonTheme> */}
+          <SkeletonTheme
+            baseColor={darkMode ? '#202020' : ''}
+            highlightColor={darkMode ? '#444' : ''}
+          >
+            <LoadingSkeleton
+              height={40}
+              className='my-2 p-2 dark:bg-gray-800'
+            />
+            <LoadingSkeleton
+              height={220}
+              className='my-2 p-2 dark:bg-gray-800'
+            />
+            <LoadingSkeleton
+              height={60}
+              className='my-2 p-2 dark:bg-gray-800'
+            />
+          </SkeletonTheme>
         </>
       ) : (
         <>

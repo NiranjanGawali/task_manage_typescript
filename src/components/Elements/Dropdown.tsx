@@ -66,7 +66,7 @@ const Dropdown = () => {
   };
 
   return (
-    <div className='flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse px-2 z-50'>
+    <div className='flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:px-2 z-50'>
       <button
         type='button'
         className='flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'

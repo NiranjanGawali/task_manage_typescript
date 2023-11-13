@@ -1,15 +1,17 @@
-import axios from 'axios';
-import { UserData, UserType } from '../utility';
+import {
+  GET_USER_DETAILS,
+  LOGIN_API_PATH,
+  REGISTER_API_PATH,
+  UPDATE_USER_DETAILS,
+  UserData,
+  UserType,
+} from '../utility';
+import axios from './../http-common';
 
 class UserService {
-  private baseUrl = `${process.env.REACT_APP_BASE_URL}`;
-
   public async login(user: UserType): Promise<UserData | any> {
     try {
-      const response = await axios.post<UserData>(
-        `${this.baseUrl}/login`,
-        user
-      );
+      const response = await axios.post<UserData>(LOGIN_API_PATH, user);
 
       if (response.status !== 200) {
         const error = new Error(
@@ -36,10 +38,7 @@ class UserService {
 
   public async register(user: UserType): Promise<UserData | any> {
     try {
-      const response = await axios.post<UserData>(
-        `${this.baseUrl}/register`,
-        user
-      );
+      const response = await axios.post<UserData>(REGISTER_API_PATH, user);
       if (response.status !== 201) {
         const error = new Error(
           `Request failed with status: ${response.status}. Message: ${response.statusText}`
@@ -65,16 +64,7 @@ class UserService {
 
   public async getUserDetails(id: string): Promise<UserType | any> {
     try {
-      const userToken = await this.getSession();
-
-      const response = await axios.get<UserType>(
-        `${this.baseUrl}/users/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${userToken.accessToken}`,
-          },
-        }
-      );
+      const response = await axios.get<UserType>(`${GET_USER_DETAILS}/${id}`);
       if (response.status !== 200) {
         const error = new Error(
           `Request failed with status: ${response.status}. Message: ${response.statusText}`
@@ -92,16 +82,9 @@ class UserService {
 
   public async updateUser(user: UserType): Promise<UserData | any> {
     try {
-      const userToken = await this.getSession();
-
       const response = await axios.put<UserData>(
-        `${this.baseUrl}/600/users/${user.id}`,
-        { password: user.password, email: user.email, name: user.name },
-        {
-          headers: {
-            Authorization: `Bearer ${userToken.accessToken}`,
-          },
-        }
+        `${UPDATE_USER_DETAILS}/${user.id}`,
+        { password: user.password, email: user.email, name: user.name }
       );
       if (response.status !== 200) {
         const error = new Error(
@@ -120,14 +103,6 @@ class UserService {
     sessionStorage.removeItem('accessToken');
     sessionStorage.removeItem('userId');
   }
-
-  public getSession = async () => {
-    const accessToken = JSON.parse(
-      sessionStorage.getItem('accessToken') || 'null'
-    );
-    const userId = JSON.parse(sessionStorage.getItem('userId') || 'null');
-    return { accessToken, userId };
-  };
 }
 
 export default UserService;

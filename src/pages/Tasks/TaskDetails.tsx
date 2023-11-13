@@ -1,11 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import oceanImage from './../../../src/assets/images/ocean-unsplash.jpg';
 import { memo, useEffect, useState } from 'react';
-import { useTaskContext, useTitle } from '../../hooks';
+import { useCommonContext, useTaskContext, useTitle } from '../../hooks';
 import { MemorizedSpinner } from '../../components';
 import { ErrorHandler } from '../../utility';
 import { useTranslation } from 'react-i18next';
-import LoadingSkeleton from 'react-loading-skeleton';
+import LoadingSkeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 interface TaskTypeParam {
   id: string;
@@ -20,6 +20,7 @@ const TaskDetails = () => {
 
   // contexts
   const { getTaskById } = useTaskContext();
+  const { darkMode } = useCommonContext();
 
   // router params
   const { id } = useParams();
@@ -60,7 +61,12 @@ const TaskDetails = () => {
           <div className='h-full'>
             <div className='w-full h-full'>
               {loading ? (
-                <LoadingSkeleton className='w-full h-full dark:bg-gray-800' />
+                <SkeletonTheme
+                  baseColor={darkMode ? '#202020' : ''}
+                  highlightColor={darkMode ? '#444' : ''}
+                >
+                  <LoadingSkeleton className='w-full h-full dark:bg-gray-800' />
+                </SkeletonTheme>
               ) : (
                 <img
                   className='h-full w-full object-cover rounded-lg'
@@ -74,11 +80,14 @@ const TaskDetails = () => {
         <div className='flex-grow p-4 w-1/2 bg-slate-50 dark:bg-black rounded-lg'>
           <div className='h-96 overflow-auto'>
             {loading ? (
-              <>
+              <SkeletonTheme
+                baseColor={darkMode ? '#202020' : ''}
+                highlightColor={darkMode ? '#444' : ''}
+              >
                 <LoadingSkeleton className='dark:bg-gray-800' height={40} />
                 <LoadingSkeleton className='dark:bg-gray-800' height={260} />
                 <LoadingSkeleton className='dark:bg-gray-800' height={30} />
-              </>
+              </SkeletonTheme>
             ) : (
               <>
                 <h2 className='text-2xl font-bold text-slate-900 dark:text-white'>

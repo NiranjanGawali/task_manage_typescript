@@ -8,6 +8,8 @@ const initialCommonContextValue: CommonContextValues = {
   setEditableTask: () => {},
   popupStatus: false,
   updatePopupStatus: () => {},
+  darkMode: false,
+  setDarkMode: () => {},
 };
 
 const CommonContext = createContext<CommonContextValues>(
@@ -17,6 +19,10 @@ const CommonContext = createContext<CommonContextValues>(
 const CommonContextProvider = ({ children }: { children: ReactNode }) => {
   const [editableTask, setEditableTask] = useState<TaskType | null>(null);
   const [popupStatus, updatePopupStatus] = useState(false);
+  const darkModeLocalStorageValue = sessionStorage.getItem('theme');
+  const [darkMode, setDarkMode] = useState<boolean>(
+    darkModeLocalStorageValue ? JSON.parse(darkModeLocalStorageValue) : false
+  );
 
   const showToaster = (msg: string) => {
     toast(msg, { autoClose: 1000, position: 'top-right' });
@@ -28,6 +34,8 @@ const CommonContextProvider = ({ children }: { children: ReactNode }) => {
     setEditableTask,
     popupStatus,
     updatePopupStatus,
+    darkMode,
+    setDarkMode,
   };
   return (
     <CommonContext.Provider value={value}>{children}</CommonContext.Provider>
