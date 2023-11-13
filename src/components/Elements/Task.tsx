@@ -23,12 +23,12 @@ const Task = ({ task }: TaskProps) => {
   // Below is demonstration of UseCallBack which memorizes function
   const handleDelete = useCallback(() => {
     try {
-      setShowSpinner(true);
+      // setShowSpinner(true);
       deleteTask(id);
       showDeleteConfirmPopup(false);
-      setTimeout(() => {
-        setShowSpinner(false);
-      }, 1000);
+      // setTimeout(() => {
+      //   setShowSpinner(false);
+      // }, 1000);
     } catch (error: any) {
       ErrorHandler(error);
       setShowSpinner(false);
