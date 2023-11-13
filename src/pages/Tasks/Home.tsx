@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { MemorizedTask } from '../../components';
-import { useTaskContext, useTitle } from '../../hooks';
+import { useEffect, useState } from 'react';
+import { MemorizedSpinner, MemorizedTask } from '../../components';
+import { useCommonContext, useTaskContext, useTitle } from '../../hooks';
 import { ErrorHandler } from '../../utility';
 import { useTranslation } from 'react-i18next';
 
@@ -11,8 +11,12 @@ const Home = () => {
   // Set page title
   useTitle('Home');
 
+  // States
+  const [loading, setLoading] = useState(true);
+
   // context
   const { getTasks, taskList } = useTaskContext();
+  const { setShowSpinner } = useCommonContext();
 
   const getTasksCall = async () => {
     try {
@@ -24,6 +28,10 @@ const Home = () => {
 
   useEffect(() => {
     getTasksCall();
+    setTimeout(() => {
+      setLoading(false);
+      setShowSpinner(false);
+    }, 2000);
   }, []); // eslint-disable-line
 
   return (
@@ -31,9 +39,12 @@ const Home = () => {
       <div className='flex flex-wrap mx-4 justify-center'>
         {taskList.length === 0 && (
           <div className='mt-20'>
-            <h1 className='text-center text-2xl font-medium dark:text-white'>
-              {t('noTasksFound')}
-            </h1>
+            {!loading && (
+              <h1 className='text-center text-2xl font-medium dark:text-white'>
+                {t('noTasksFound')}
+              </h1>
+            )}
+            {loading && <MemorizedSpinner />}
           </div>
         )}
         {taskList.length > 0 &&

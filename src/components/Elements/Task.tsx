@@ -12,7 +12,8 @@ const Task = ({ task }: TaskProps) => {
 
   // contexts
   const { deleteTask } = useTaskContext();
-  const { updatePopupStatus, setEditableTask, darkMode } = useCommonContext();
+  const { updatePopupStatus, setEditableTask, darkMode, setShowSpinner } =
+    useCommonContext();
 
   // states
   const { title, description, id, createdAt } = task;
@@ -22,9 +23,14 @@ const Task = ({ task }: TaskProps) => {
   // Below is demonstration of UseCallBack which memorizes function
   const handleDelete = useCallback(() => {
     try {
+      setShowSpinner(true);
       deleteTask(id);
+      setTimeout(() => {
+        setShowSpinner(false);
+      }, 1000);
     } catch (error: any) {
       ErrorHandler(error);
+      setShowSpinner(false);
     }
   }, []); // eslint-disable-line
 

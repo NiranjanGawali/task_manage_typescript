@@ -10,6 +10,8 @@ const initialCommonContextValue: CommonContextValues = {
   updatePopupStatus: () => {},
   darkMode: false,
   setDarkMode: () => {},
+  showSpinner: false,
+  setShowSpinner: () => {},
 };
 
 const CommonContext = createContext<CommonContextValues>(
@@ -23,6 +25,7 @@ const CommonContextProvider = ({ children }: { children: ReactNode }) => {
   const [darkMode, setDarkMode] = useState<boolean>(
     darkModeLocalStorageValue ? JSON.parse(darkModeLocalStorageValue) : false
   );
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const showToaster = (msg: string) => {
     toast(msg, { autoClose: 1000, position: 'top-right' });
@@ -36,6 +39,8 @@ const CommonContextProvider = ({ children }: { children: ReactNode }) => {
     updatePopupStatus,
     darkMode,
     setDarkMode,
+    showSpinner,
+    setShowSpinner,
   };
   return (
     <CommonContext.Provider value={value}>{children}</CommonContext.Provider>

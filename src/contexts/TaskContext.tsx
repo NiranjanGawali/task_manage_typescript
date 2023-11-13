@@ -12,6 +12,7 @@ const initialTaskState: TaskType = {
 
 const initialTaskContextValue: TaskContextValues = {
   taskList: [initialTaskState],
+  setTaskList: () => {},
   createTask: async (task: TaskType) => {},
   deleteTask: async (id: string) => {},
   editTask: async (task: TaskType) => {},
@@ -32,6 +33,7 @@ const TaskContextProvider = ({ children }: { children: ReactNode }) => {
       const taskData = await taskService.getTasks();
       taskData ? setTaskList(taskData) : setTaskList([]);
     } catch (error) {
+      setTaskList([]);
       throw error;
     }
   };
@@ -62,7 +64,15 @@ const TaskContextProvider = ({ children }: { children: ReactNode }) => {
     try {
       const taskResponse = await taskService.editTask(task);
       if (taskResponse) {
-        getTasks();
+        // getTasks();
+        const updatedTaskList = [...taskList];
+        for (const singleTask of updatedTaskList) {
+          if (singleTask.id === task.id) {
+            singleTask.title = task.title;
+            singleTask.description = task.description;
+          }
+        }
+        setTaskList(updatedTaskList);
       }
     } catch (error) {
       throw error;
@@ -88,6 +98,7 @@ const TaskContextProvider = ({ children }: { children: ReactNode }) => {
 
   const value = {
     taskList,
+    setTaskList,
     createTask,
     deleteTask,
     editTask,

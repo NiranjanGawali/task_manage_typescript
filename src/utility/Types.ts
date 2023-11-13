@@ -34,6 +34,7 @@ type TaskType = {
 
 type TaskContextValues = {
   taskList: TaskType[];
+  setTaskList: (tasks: TaskType[]) => void;
   createTask: (task: TaskType) => void;
   deleteTask: (id: string) => void;
   editTask: (task: TaskType) => void;
@@ -57,6 +58,8 @@ type CommonContextValues = {
   updatePopupStatus: (popupStatus: boolean) => void;
   darkMode: boolean;
   setDarkMode: (darkModeValue: boolean) => void;
+  showSpinner: boolean;
+  setShowSpinner: (spinnerStatus: boolean) => void;
 };
 
 // ConfirmPopup type

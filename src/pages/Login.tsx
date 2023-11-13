@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUserContext, useTitle } from '../hooks';
+import { useUserContext, useTitle, useCommonContext } from '../hooks';
 import { MemorizedDarkMode } from '../components';
 import { ErrorHandler } from '../utility';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,9 @@ import { useTranslation } from 'react-i18next';
 const Login = () => {
   // Set page title
   useTitle('Login');
+
+  // Contexts
+  const { setShowSpinner } = useCommonContext();
 
   // i18n translation
   const { t } = useTranslation();
@@ -42,6 +45,7 @@ const Login = () => {
 
   const handleGuestUser = async () => {
     try {
+      setShowSpinner(true);
       const autDetails = {
         email: process.env.REACT_APP_GUEST_LOGIN,
         password: process.env.REACT_APP_GUEST_PASSWORD,
@@ -51,6 +55,8 @@ const Login = () => {
         navigate('/dashboard');
       }
     } catch (error) {
+      setShowSpinner(false);
+
       ErrorHandler(error);
     }
   };

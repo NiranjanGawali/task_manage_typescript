@@ -14,16 +14,16 @@ const AddTask = ({ isOpen, closeModal }: AddTaskProps) => {
   // i18n translation
   const { t } = useTranslation();
 
-  // states
+  // contexts
   const { createTask, editTask } = useTaskContext();
-  const { showToaster, editableTask } = useCommonContext();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { showToaster, editableTask, setShowSpinner } = useCommonContext();
 
+  // states
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   let initialObject = {
     title: editableTask ? editableTask.title : '',
     description: editableTask ? editableTask.description : '',
   };
-
   const [taskForm, setTaskForm] = useState(initialObject);
 
   useEffect(() => {
@@ -69,6 +69,8 @@ const AddTask = ({ isOpen, closeModal }: AddTaskProps) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
+      setShowSpinner(true);
+
       const currentDate = new Date();
       const formattedDate = currentDate.toISOString();
       if (editableTask) {
@@ -82,11 +84,12 @@ const AddTask = ({ isOpen, closeModal }: AddTaskProps) => {
         createTask({ ...taskForm, id: v4uuid(), createdAt: formattedDate });
         showToaster('Task added successfully !!!');
       }
-
-      setTaskForm(initialObject);
       closeModal();
+      setTaskForm(initialObject);
+      setShowSpinner(false);
     } catch (error: any) {
       ErrorHandler(error);
+      setShowSpinner(false);
     }
   };
 

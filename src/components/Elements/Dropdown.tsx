@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import profilePhoto from './../../assets/images/profile-pic.webp';
-import { useUserContext } from '../../hooks';
+import { useTaskContext, useUserContext } from '../../hooks';
 import { UserType, ErrorHandler } from '../../utility';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MemorizedConfirmPopup } from '../Modals/ConfirmPopup';
@@ -30,9 +30,11 @@ const Dropdown = () => {
 
   // user context
   const { logout, getUserDetails, userData } = useUserContext();
+  const { setTaskList } = useTaskContext();
 
   const handleLogout = useCallback(() => {
     logout();
+    setTaskList([]);
     navigate('/login');
   }, []); //eslint-disable-line
 

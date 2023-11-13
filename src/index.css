@@ -16,3 +16,7 @@ main {
   margin: auto;
   padding: 15px;
 }
+
+.spinner-visible {
+  overflow: hidden;
+}

@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 as v4uuid } from 'uuid';
-import { useUserContext, useTitle } from '../hooks';
+import { useUserContext, useTitle, useCommonContext } from '../hooks';
 import { toast } from 'react-toastify';
 import { MemorizedDarkMode } from '../components';
 import { UserType, ErrorHandler } from '../utility';
@@ -19,6 +19,7 @@ const Register = () => {
 
   // contexts
   const { register } = useUserContext();
+  const { setShowSpinner } = useCommonContext();
 
   // states
   const initialLoginForm: UserType = {
@@ -33,12 +34,15 @@ const Register = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
+      setShowSpinner(true);
+
       const response = await register(registerForm);
       if (response.email) {
         toast('User registered successfully!!!');
         navigate('/dashboard');
       }
     } catch (error: any) {
+      setShowSpinner(false);
       ErrorHandler(error);
     }
   };
