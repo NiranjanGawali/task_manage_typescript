@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import img from './assets/raychan-background.jpg';
 import { MemorizedSpinner } from './components';
 import { useCommonContext } from './hooks';
+import ScrollToTop from './components/Other/ScrollToTop';
 
 function App() {
   // contexts
@@ -16,6 +17,7 @@ function App() {
       style={{ backgroundImage: `url(${img})` }}
     >
       {showSpinner && <MemorizedSpinner />}
+      <ScrollToTop />
       <AllRoutes />
       <ToastContainer />
     </div>

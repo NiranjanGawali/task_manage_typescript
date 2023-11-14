@@ -56,29 +56,25 @@ const TaskDetails = () => {
   return (
     <main>
       <div>{!task && <MemorizedSpinner />}</div>
-      <div className='flex mt-20 h-96'>
-        <div className='flex-grow w-1/2'>
-          <div className='h-full'>
-            <div className='w-full h-full'>
-              {loading ? (
-                <SkeletonTheme
-                  baseColor={darkMode ? '#202020' : ''}
-                  highlightColor={darkMode ? '#444' : ''}
-                >
-                  <LoadingSkeleton className='w-full h-full dark:bg-gray-800' />
-                </SkeletonTheme>
-              ) : (
-                <img
-                  className='h-full w-full object-cover rounded-lg'
-                  src={oceanImage}
-                  alt='Ocean'
-                />
-              )}
-            </div>
-          </div>
+      <div className='flex mt-5 flex-col justify-center items-center'>
+        <div className='md:w-1/2 w-full'>
+          {loading ? (
+            <SkeletonTheme
+              baseColor={darkMode ? '#202020' : ''}
+              highlightColor={darkMode ? '#444' : ''}
+            >
+              <LoadingSkeleton className='w-full h-full dark:bg-gray-800' />
+            </SkeletonTheme>
+          ) : (
+            <img
+              className='w-full object-cover rounded-lg'
+              src={oceanImage}
+              alt='Ocean'
+            />
+          )}
         </div>
-        <div className='flex-grow p-4 w-1/2 bg-slate-50 dark:bg-black rounded-lg'>
-          <div className='h-96 overflow-auto'>
+        <div className='flex-grow p-4 md:w-1/2 w-full bg-slate-50 dark:bg-black rounded-lg'>
+          <div className='overflow-auto'>
             {loading ? (
               <SkeletonTheme
                 baseColor={darkMode ? '#202020' : ''}

@@ -4,6 +4,7 @@ export { default as Search, MemorizedSearch } from './Sections/Search';
 // others export
 export { default as DarkMode, MemorizedDarkMode } from './Other/DarkMode';
 export { default as Throttling } from './Other/Throttling';
+export { default as ScrollToTop } from './Other/ScrollToTop';
 
 // modals export
 export { default as AddTask, MemorizedAddTask } from './Modals/AddTask';
