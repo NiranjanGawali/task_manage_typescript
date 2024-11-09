@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import profilePhoto from './../../assets/images/profile-pic.webp';
 import { useTaskContext, useUserContext } from '../../hooks';
 import { UserType, ErrorHandler } from '../../utility';
@@ -32,6 +32,34 @@ const Dropdown = () => {
   const { logout, getUserDetails, userData } = useUserContext();
   const { setTaskList } = useTaskContext();
 
+  // dropdown and buttonRef
+  const dropdownRef = useRef<HTMLDivElement | null>(null); // Type the ref as HTMLDivElement
+  const buttonRef = useRef<HTMLButtonElement | null>(null); // Type the ref as HTMLButtonElement
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Check if the clicked element is outside the dropdown and the button
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setUserDropDownOpen(false); // Close the dropdown
+      }
+    };
+
+    // Add event listener
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Handling logout
   const handleLogout = useCallback(() => {
     logout();
     setTaskList([]);
@@ -77,6 +105,8 @@ const Dropdown = () => {
         data-dropdown-toggle='user-dropdown'
         data-dropdown-placement='bottom'
         onClick={() => setUserDropDownOpen(!isUserDropDownOpen)}
+        title='open user menu'
+        ref={buttonRef}
       >
         <span className='sr-only'>Open user menu</span>
         <img
@@ -85,10 +115,12 @@ const Dropdown = () => {
           alt='Profile'
         />
       </button>
+      {/* below is popup content */}
       <div
+        ref={dropdownRef}
         className={`${
           !isUserDropDownOpen ? 'hidden' : ''
-        } absolute z-100 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 right-2 2xl:right-40 top-12 mt-10 md:mt-0 lg:mt-0`}
+        } absolute z-100 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 top-12 md:mt-0 lg:mt-0 left-0 right-0 sm:left-auto lg:right-auto overflow-x-hidden`}
         id='user-dropdown'
       >
         <div className='px-4 py-3'>

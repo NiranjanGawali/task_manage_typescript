@@ -7,6 +7,7 @@ import { MemorizedSearch } from '../Sections/Search';
 import { useCommonContext } from '../../hooks';
 import { MemorizedDropdown } from '../Elements/Dropdown';
 import { useTranslation } from 'react-i18next';
+import hamburgerSVG from './../../assets/svg/hamburger-menu-svgrepo-com.svg';
 
 const Header = () => {
   // Translation{
@@ -94,6 +95,11 @@ const Header = () => {
                 d='M1 1h15M1 7h15M1 13h15'
               />
             </svg>
+            {/* <img
+              src={hamburgerSVG}
+              alt='hamburger icon'
+              className='w-5 h-5 dark:text-white'
+            /> */}
           </button>
           <MemorizedDropdown />
         </div>
