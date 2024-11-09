@@ -7,7 +7,7 @@ import { MemorizedSearch } from '../Sections/Search';
 import { useCommonContext } from '../../hooks';
 import { MemorizedDropdown } from '../Elements/Dropdown';
 import { useTranslation } from 'react-i18next';
-import hamburgerSVG from './../../assets/svg/hamburger-menu-svgrepo-com.svg';
+// import hamburgerSVG from './../../assets/svg/hamburger-menu-svgrepo-com.svg';
 
 const Header = () => {
   // Translation{
